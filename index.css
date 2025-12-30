@@ -40,7 +40,7 @@ nav a:hover {
 .hero {
   padding: 6rem 10%;
   text-align: center;
-  height: 500px;
+  height: auto;
 }
 
 .hero h2 {
@@ -141,4 +141,17 @@ footer {
   border-top: 1px solid #111;
   color: #666;
   font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  /* Mobile styles go here */
+
+  body {
+    font-size: 14px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
 }

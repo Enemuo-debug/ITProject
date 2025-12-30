@@ -11,20 +11,26 @@
   <header>
     <h1>Zurus06.NAT Dashboard</h1>
 
-    <form class="search-container">
-      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-        <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM10 15a5 5 0 110-10 5 5 0 010 10z"/>
-      </svg>
-      <input class="search-bar" type="text" placeholder="Search for fellow engineers..."/>
-    </form>
-
     <nav>
       <button id="logout">LOG OUT</button>
     </nav>
   </header>
 
+  <button id="collapse">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
   <main>
-    <aside>
+    <aside id="sideLined">
       <div class="profile">
         <img id="userAvatar" src="https://via.placeholder.com/90" alt="User Avatar" />
         <h2 id="username">Loading...</h2>
@@ -126,6 +132,10 @@
         return;
       }
     }
+
+    document.getElementById("collapse").addEventListener("click", ()=>{
+      document.getElementById("sideLined").classList.toggle("open");
+    })
 
     document.getElementById("logout").addEventListener("click", async (e) => {
       await fetch(URL + "/account/logout", {
