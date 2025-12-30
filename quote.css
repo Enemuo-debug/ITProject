@@ -1,0 +1,106 @@
+/* ===== Base ===== */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #000;
+  margin: 0;
+  padding: 20px;
+  color: white;
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid white;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: 600;
+}
+
+/* ===== Main Container ===== */
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+/* ===== Post Context (Tweet Parent) ===== */
+.post-context {
+  border-bottom: 1px solid white;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+}
+
+.post-context h2 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+}
+
+.post-context .intro {
+  color: #89d1f0;
+  font-size: 16px;
+}
+
+/* ===== Quote Card ===== */
+.quote-card {
+  border: 1px solid white;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 30px;
+  animation: identifier 0.3s forwards;
+}
+
+.quote-message {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+}
+
+/* ===== Meta ===== */
+.quote-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* ===== Back Button ===== */
+.back-btn {
+  display: inline-block;
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 16px;
+  border: 1px solid white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ===== Animation ===== */
+@keyframes identifier {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}

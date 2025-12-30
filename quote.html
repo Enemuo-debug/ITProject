@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quote • Zurus06.NAT</title>
+  <link rel="stylesheet" href="quote.css" />
+  <link rel="icon" href="./Zurus06.NAT.png" type="image/png">
+</head>
+<body>
+
+<header>
+  <h1>Zurus06.NAT Posts</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="posts.html">Posts</a>
+    <a href="dashboard.html">Dashboard</a>
+  </nav>
+</header>
+
+<div class="container" id="quoteRoot">
+  <p>Loading quote...</p>
+</div>
+
+<script type="module">
+  import { URL } from "./config.js";
+
+  const params = new URLSearchParams(window.location.search);
+  const quoteId = params.get("id");
+
+  async function loadQuote() {
+    if (!quoteId) {
+      document.getElementById("quoteRoot").innerHTML =
+        "<h2>Invalid quote</h2>";
+      return;
+    }
+
+    try {
+      const res = await fetch(`${URL}/quotes/${quoteId}`);
+      if (!res.ok) throw new Error();
+
+      const q = await res.json();
+
+      document.getElementById("quoteRoot").innerHTML = `
+        <!-- Post context -->
+        <div class="post-context">
+          <h2>${q.postCaption}</h2>
+          <p class="intro">${q.postIntro}</p>
+        </div>
+
+        <!-- Quote itself -->
+        <div class="quote-card">
+          <p class="quote-message">
+            ${q.message}
+          </p>
+
+          <div class="quote-meta">
+            <span>— ${q.nameOfUser}</span>
+            <span>${new Date(q.createdAt).toLocaleString()}</span>
+          </div>
+        </div>
+
+        <a class="back-btn" href="post.html?id=${q.postId}">
+          ← Back to Post
+        </a>
+      `;
+    } catch {
+      document.getElementById("quoteRoot").innerHTML =
+        "<h2>Quote not found</h2>";
+    }
+  }
+
+  loadQuote();
+</script>
+
+</body>
+</html>
