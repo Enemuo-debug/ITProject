@@ -305,7 +305,6 @@ footer {
 }
 
 #collapse {
-    position: absolute;
     bottom: 25px;
     left: 10px;
     width: 50px;
@@ -343,7 +342,6 @@ footer {
 
   #collapse {
     display: flex;
-    position: fixed;
     bottom: 15%;
     left: 15px;
     z-index: 1100;
