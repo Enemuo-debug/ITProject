@@ -305,6 +305,7 @@ footer {
 }
 
 #collapse {
+    margin-right: 15px;
     bottom: 25px;
     left: 10px;
     width: 50px;
