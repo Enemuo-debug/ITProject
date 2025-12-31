@@ -13,28 +13,39 @@
   font-family: "Poppins", sans-serif;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   min-height: 100vh;
-  width: 100%;
   background: var(--black);
   color: var(--white);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 20px;
-  position: relative;
 }
 
+/* ===========================
+   CONTAINER
+=========================== */
+
 .signup-container {
-  position: relative;
-  z-index: 2;
   width: 100%;
   max-width: 900px;
   padding: 40px 50px;
   border-radius: 15px;
   backdrop-filter: blur(10px);
   color: var(--gray-light);
+  overflow-x: hidden; /* critical */
 }
+
+/* ===========================
+   HEADINGS
+=========================== */
 
 h2 {
   text-align: center;
@@ -44,16 +55,25 @@ h2 {
   letter-spacing: 1px;
 }
 
+/* ===========================
+   FORM GRID
+=========================== */
+
 form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px 30px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
+  min-width: 0; /* critical for grid shrink */
 }
+
+/* ===========================
+   LABELS
+=========================== */
 
 label {
   font-size: 14px;
@@ -61,16 +81,22 @@ label {
   color: var(--gray-light);
 }
 
+/* ===========================
+   INPUTS
+=========================== */
+
 input,
 select,
 textarea {
+  width: 100%;
   padding: 12px;
   border: 1px solid var(--gray-mid);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
   color: var(--white);
-  transition: 0.3s;
   font-size: 14px;
+  transition: 0.3s;
+  min-width: 0; /* flex + grid fix */
 }
 
 option {
@@ -79,10 +105,11 @@ option {
 }
 
 input:focus,
-textarea:focus,
-select:focus {
-  background: rgba(255, 255, 255, 0.15);
+select:focus,
+textarea:focus {
+  outline: none;
   border-color: var(--white);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 textarea {
@@ -90,46 +117,56 @@ textarea {
   height: 100px;
 }
 
+/* ===========================
+   FULL WIDTH ITEMS
+=========================== */
+
 .form-group.bio {
   grid-column: span 2;
 }
 
+/* ===========================
+   EMAIL CODE GROUP
+=========================== */
+
 .email-code-group {
   grid-column: span 2;
   display: flex;
-  align-items: center;
   gap: 15px;
-  background: rgba(0, 0, 0, 0.05);
   padding: 15px 20px;
   border: 1px dashed var(--gray-mid);
   border-radius: 10px;
+  min-width: 0;
 }
 
 .email-code-group label {
-  white-space: nowrap;
   font-size: 15px;
   font-weight: 500;
   color: var(--white);
+  white-space: nowrap;
 }
 
 .email-code-group input {
   flex: 1;
+  min-width: 0; /* MOST IMPORTANT FIX */
 }
+
+/* ===========================
+   BUTTON
+=========================== */
 
 button {
   grid-column: span 2;
-  background: var(--gray-dark);
-  border: 1px solid var(--white);
   padding: 14px;
   border-radius: 8px;
-  font-weight: 600;
+  background: var(--gray-dark);
+  border: 1px solid var(--white);
   color: var(--white);
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
-  margin-top: 5px;
-  text-transform: uppercase;
   letter-spacing: 1px;
+  transition: 0.3s;
 }
 
 button:hover {
@@ -138,22 +175,29 @@ button:hover {
   transform: scale(1.03);
 }
 
+/* ===========================
+   LINKS
+=========================== */
+
 .redirect-links {
-  text-align: center;
   margin-top: 25px;
-  color: var(--gray-light);
+  text-align: center;
   font-size: 14px;
+  color: var(--gray-light);
 }
 
 .redirect-links a {
   color: var(--white);
   text-decoration: underline;
-  font-weight: 500;
 }
 
 .redirect-links a:hover {
   color: var(--gray-light);
 }
+
+/* ===========================
+   TABLET & MOBILE
+=========================== */
 
 @media (max-width: 768px) {
   body {
@@ -173,7 +217,6 @@ button:hover {
 
   form {
     grid-template-columns: 1fr;
-    gap: 18px;
   }
 
   .form-group.bio,
@@ -187,19 +230,25 @@ button:hover {
     align-items: stretch;
   }
 
-  input,
-  select,
-  textarea {
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 15px;
-    padding: 15px;
+  .email-code-group label {
+    white-space: normal;
   }
 }
 
-@media (max-width: 380px) {
+/* ===========================
+   ULTRA SMALL DEVICES (≤360px)
+=========================== */
+
+@media (max-width: 360px) {
+  .signup-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .email-code-group {
+    padding: 12px 14px;
+  }
+
   h2 {
     font-size: 20px;
   }
