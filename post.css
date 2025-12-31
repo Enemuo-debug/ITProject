@@ -455,4 +455,42 @@ input[type="text"] {
         border-bottom: white 1px solid;
         margin-top: 10px;
     }
+
+    .containerCover {
+        width: 90%;
+        min-height: 50%;
+        background: none;
+        border: 1px solid white;
+        border-radius: 20px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 5px;
+        background-color: transparent;
+        color: #fff;
+        border: 2px solid white;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 12px;
+        transition: 0.3s;
+    }
+
+    .containerCover textarea {
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 15px;
+        padding: 10px;
+        overflow-y: auto;
+        height: auto;
+        min-height: 300px;
+        max-height: 100vh;
+        color: white;
+        background-color: transparent;
+        resize: none;
+        font-size: larger;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
 }
