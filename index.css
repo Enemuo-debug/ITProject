@@ -144,14 +144,35 @@ footer {
 }
 
 @media (max-width: 768px) {
-  /* Mobile styles go here */
-
   body {
     font-size: 14px;
   }
 
-  nav {
-    display: flex;
+  header nav a {
+    margin: 0px;
+    padding: 5px;
+  }
+
+  header {
     flex-direction: column;
+    padding: 10px;
+  }
+
+  header nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink: inherit;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding: 0px 10px;
+  }
+
+  .hero a {
+    margin-top: 10px;
+  }
+
+  .hero p {
+    margin-bottom: 10px;
   }
 }

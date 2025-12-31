@@ -110,6 +110,7 @@ nav a {
     color: #ffffff;
     line-height: 1.6;
     margin-bottom: 20px;
+    text-align: center;
 }
 .image-box {
     text-align: center;
@@ -400,6 +401,7 @@ input[type="text"] {
     width: 100%;
     max-width: 100%;
     margin-bottom: 15px;
+    box-sizing: border-box;
   }
 
     #commentCreate {
@@ -413,5 +415,44 @@ input[type="text"] {
         color: #fff;
         box-sizing: border-box;
         width: 100%;
+    }
+
+    .postHeader h1 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    body {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    #postContainer {
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    .content-text {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    header nav {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        border-top: white 1px solid;
+        border-bottom: white 1px solid;
+        margin-top: 10px;
     }
 }
