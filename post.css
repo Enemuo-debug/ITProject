@@ -391,4 +391,27 @@ input[type="text"] {
     display: flex;
     flex-direction: column;
   }
+
+  .creatorDetails {
+    flex-direction: column;
+  }
+
+  .creatorDiv {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+    #commentCreate {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+        color: #fff;
+        box-sizing: border-box;
+        width: 100%;
+    }
 }

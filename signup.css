@@ -1,184 +1,216 @@
 :root {
-      --black: #000;
-      --white: #fff;
-      --gray-light: #dcdcdc;
-      --gray-mid: #888;
-      --gray-dark: #222;
-    }
+  --black: #000;
+  --white: #fff;
+  --gray-light: #dcdcdc;
+  --gray-mid: #888;
+  --gray-dark: #222;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
-    body {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--black) url("black-white-network-bg.png") no-repeat center center/cover;
-      position: relative;
-      overflow: hidden;
-      color: var(--white);
-    }
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
 
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(6px);
-      z-index: 0;
-    }
+.signup-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  padding: 40px 50px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  color: var(--gray-light);
+}
 
-    .signup-container {
-      position: relative;
-      z-index: 2;
-      width: 900px;
-      max-width: 95%;
-      border-radius: 15px;
-      padding: 40px 50px;
-      backdrop-filter: blur(10px);
-      outline: #fff;
-      color: var(--gray-light);
-    }
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 1px;
+}
 
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-weight: 600;
-      color: var(--white);
-      letter-spacing: 1px;
-    }
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 30px;
+}
 
-    form {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px 30px;
-    }
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
+label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--gray-light);
+}
 
-    label {
-      font-size: 14px;
-      margin-bottom: 6px;
-      color: var(--gray-light);
-    }
+input,
+select,
+textarea {
+  padding: 12px;
+  border: 1px solid var(--gray-mid);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  transition: 0.3s;
+  font-size: 14px;
+}
 
-    input,
-    select,
-    textarea {
-      padding: 10px 12px;
-      border: 1px solid var(--gray-mid);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--white);
-      outline: none;
-      transition: 0.3s;
-    }
-    
-    option {
-      background: var(--black);
-      color: var(--white);
-    }
+option {
+  background: var(--black);
+  color: var(--white);
+}
 
-    input:focus,
-    textarea:focus,
-    select:focus {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: var(--white);
-    }
+input:focus,
+textarea:focus,
+select:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--white);
+}
 
-    textarea {
-      resize: none;
-      height: 100px;
-    }
+textarea {
+  resize: none;
+  height: 100px;
+}
 
-    .form-group.bio {
-      grid-column: span 2;
-    }
+.form-group.bio {
+  grid-column: span 2;
+}
 
-    .email-code-group {
-      grid-column: span 2;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 15px 20px;
-      border: 1px dashed var(--gray-mid);
-      border-radius: 10px;
-      margin-top: 5px;
-    }
+.email-code-group {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 15px 20px;
+  border: 1px dashed var(--gray-mid);
+  border-radius: 10px;
+}
 
-    .email-code-group label {
-      margin-bottom: 0;
-      white-space: nowrap;
-      color: var(--white);
-      font-weight: 500;
-      font-size: 15px;
-    }
+.email-code-group label {
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--white);
+}
 
-    .email-code-group input {
-      flex: 1;
-      padding: 10px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--gray-mid);
-      color: var(--white);
-    }
+.email-code-group input {
+  flex: 1;
+}
 
-    button {
-      grid-column: span 2;
-      background: var(--gray-dark);
-      border: 1px solid var(--white);
-      padding: 13px;
-      border-radius: 8px;
-      font-weight: 600;
-      color: var(--white);
-      font-size: 17px;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-top: 5px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+button {
+  grid-column: span 2;
+  background: var(--gray-dark);
+  border: 1px solid var(--white);
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--white);
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
-    button:hover {
-      background: var(--white);
-      color: var(--black);
-      transform: scale(1.03);
-    }
+button:hover {
+  background: var(--white);
+  color: var(--black);
+  transform: scale(1.03);
+}
 
-    .redirect-links {
-      text-align: center;
-      margin-top: 25px;
-      color: var(--gray-light);
-      font-size: 14px;
-    }
+.redirect-links {
+  text-align: center;
+  margin-top: 25px;
+  color: var(--gray-light);
+  font-size: 14px;
+}
 
-    .redirect-links a {
-      color: var(--white);
-      text-decoration: underline;
-      font-weight: 500;
-    }
+.redirect-links a {
+  color: var(--white);
+  text-decoration: underline;
+  font-weight: 500;
+}
 
-    .redirect-links a:hover {
-      color: var(--gray-light);
-    }
+.redirect-links a:hover {
+  color: var(--gray-light);
+}
 
-    @media (max-width: 700px) {
-      form {
-        grid-template-columns: 1fr;
-      }
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    padding: 15px;
+  }
 
-      .email-code-group {
-        flex-direction: column;
-        align-items: stretch;
-      }
-    }
+  .signup-container {
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .form-group.bio,
+  .email-code-group,
+  button {
+    grid-column: span 1;
+  }
+
+  .email-code-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}

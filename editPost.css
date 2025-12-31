@@ -23,6 +23,7 @@ body {
   border-radius: 6px;
   cursor: pointer;
   margin-left: 10px;
+  box-sizing: border-box;
 }
 
 nav ul {
@@ -283,4 +284,21 @@ footer {
 ::-webkit-scrollbar {
     width: 0px;
     color: white;
+}
+
+
+@media (max-width: 768px) {
+  .card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .swapDown, .swapUp {
+    margin: 0px;
+  }
+
+  .delete-btn {
+    width: 100%;
+  }
 }
