@@ -104,3 +104,60 @@ nav a {
     transform: scale(1.02);
   }
 }
+
+
+@media (max-width: 768px) {
+  body {
+    padding: 5px;
+  }
+
+  #quoteRoot.container {
+    padding: 10px;
+  }
+
+  .quote-card {
+    padding: 10px;
+  }
+
+  .intro {
+    margin: 5px;
+  }
+
+  .post-context .intro {
+    color: #89d1f0;
+    font-size: 14px;
+  }
+
+  #quoteRoot.container h2 {
+    margin: 10px;
+  }
+
+  .quote-message {
+    text-align: center;
+    white-space: normal;
+    font-size: 14px;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .back-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #fff;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+}
